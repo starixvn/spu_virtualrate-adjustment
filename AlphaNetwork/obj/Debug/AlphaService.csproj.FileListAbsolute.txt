@@ -1,0 +1,8 @@
+D:\Project\AlphaNetwork\AlphaNetwork\bin\Debug\AlphaService.exe.config
+D:\Project\AlphaNetwork\AlphaNetwork\bin\Debug\AlphaService.exe
+D:\Project\AlphaNetwork\AlphaNetwork\bin\Debug\AlphaService.pdb
+D:\Project\AlphaNetwork\AlphaNetwork\obj\Debug\AlphaService.csprojResolveAssemblyReference.cache
+D:\Project\AlphaNetwork\AlphaNetwork\obj\Debug\AlphaService.csproj.GenerateResource.Cache
+D:\Project\AlphaNetwork\AlphaNetwork\obj\Debug\AlphaService.exe
+D:\Project\AlphaNetwork\AlphaNetwork\obj\Debug\AlphaService.pdb
+D:\Project\AlphaNetwork\AlphaNetwork\obj\Debug\AlphaService.Service1.resources
