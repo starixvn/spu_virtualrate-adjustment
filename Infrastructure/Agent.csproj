@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DiffSharp, Version=0.7.7.0, Culture=neutral, processorArchitecture=AMD64">
@@ -69,6 +70,14 @@
       <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Streams, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Streams.0.4.1\lib\net45\Streams.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Streams.CSharp, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Streams.CSharp.0.4.1\lib\net45\Streams.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -81,13 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm.cs" />
-    <Compile Include="Constant.Designer.cs">
-      <DependentUpon>Constant.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Criteria\GetDataCriteria.cs" />
     <Compile Include="Alpha.cs" />
+    <Compile Include="Criteria\InsertData.cs" />
     <Compile Include="Model\BetModel.cs" />
     <Compile Include="DataRepository.cs" />
     <Compile Include="Model\ClusterModel.cs" />
@@ -101,12 +106,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Constant.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Constant.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

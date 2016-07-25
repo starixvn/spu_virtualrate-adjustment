@@ -1,0 +1,32 @@
+﻿Installing assembly 'D:\Project\AlphaNetwork\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Project\AlphaNetwork\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe
+   logfile = D:\Project\AlphaNetwork\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.InstallLog
+Installing service SPU.CustMarginPrediction.Service...
+Creating EventLog source SPU.CustMarginPrediction.Service in log Application...
+Rolling back assembly 'D:\Project\AlphaNetwork\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Project\AlphaNetwork\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe
+   logfile = D:\Project\AlphaNetwork\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.InstallLog
+Restoring event log to previous state for source SPU.CustMarginPrediction.Service.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\Project\virtualrate-adjustment\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Project\virtualrate-adjustment\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe
+   logfile = D:\Project\virtualrate-adjustment\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.InstallLog
+Installing service SPU.CustMarginPrediction.Service...
+Creating EventLog source SPU.CustMarginPrediction.Service in log Application...
+Rolling back assembly 'D:\Project\virtualrate-adjustment\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Project\virtualrate-adjustment\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.exe
+   logfile = D:\Project\virtualrate-adjustment\PredictionService\bin\Release\SPU.CustMarginPrediction.Service.InstallLog
+Restoring event log to previous state for source SPU.CustMarginPrediction.Service.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.

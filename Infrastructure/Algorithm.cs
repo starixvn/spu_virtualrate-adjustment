@@ -18,7 +18,7 @@
 
         public static MedoidsModel<LearningModel> GetMedoids(ClusterModel model)
         {
-            var clusterNum = model.Size / 10;
+            var clusterNum = model.Series.Count / 10;
             var medoids =
                 Clustering.KMedoids(model.Series, (x, y) => Math.Sqrt(Dtw(x.Curve, y.Curve)), clusterNum)
                 .Select(i => model.Series[i]);

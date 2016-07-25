@@ -16,7 +16,7 @@
             CustId = s.CustId;
 
             var stoppingThreshold = 20; //stopping threshold suggested in Time Series Prediction and Neural Networks paper
-            var tmp = Seq.FNN(s.Margins, stoppingThreshold, (x, y) => Math.Sqrt(x.Zip(y, (a, b) => (a - b) * (a - b)).Sum())); // find good windows using false nearest neighbor
+            var tmp = Seq.FNN(s.Margins, stoppingThreshold, (x, y) => Math.Sqrt(x.Zip(y, (a, b) => Math.Pow(a - b, 2)).Sum())); // find good windows using false nearest neighbor
 
             Data =
                 (double)tmp.Item2 / (s.Margins.Length - tmp.Item1 + 1) <= threshold // (number of error data)/(total data) <= threshold
@@ -43,7 +43,8 @@
 
                 for (var i = 0; i < inputs.Length; i++)
                 {
-                    inputs[i] = Network.Input<double[]>(arr => arr[i]);
+                    var tmp = i;
+                    inputs[i] = Network.Input<double[]>(arr => arr[tmp]);
                 }
 
                 var hiddens = new Neuron<double[]>[n * 7];
