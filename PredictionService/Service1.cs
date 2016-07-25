@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Agent;
 using Fanex.Data.Configuration;
-using PredictionService;
+
 
 namespace SPU.CustMarginPrediction.Service
 {
