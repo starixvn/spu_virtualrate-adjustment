@@ -1,18 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Agent.Model
 {
     [Serializable]
-    public class Predicted
+    public struct Prediction
     {
         public int CustId { get; set; }
 
         public double TrainError { get; set; }
 
-        public double Prediction { get; set; }
+        public double Margin { get; set; }
+
+        public XElement ToXML()
+        {
+            return new XElement("Prediction", new XAttribute("CustId", CustId), new XAttribute("TrainErr", TrainError), new XAttribute("Margin", Margin));
+        }
     }
 }

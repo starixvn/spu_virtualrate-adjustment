@@ -2,7 +2,7 @@
 
 namespace Agent.Model
 {
-    public class BetModel
+    public struct BetModel
     {
         public int CustId { get; set; }
 

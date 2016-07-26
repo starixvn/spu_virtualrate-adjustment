@@ -14,6 +14,7 @@ namespace AlphaCmd
             DbSettingProviderManager.Current.Start();
             var a = new Alpha(0.012,7,0.3);
             a.Initialize();
+            Console.ReadLine();
         }
     }
 }

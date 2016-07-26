@@ -1,4 +1,6 @@
-﻿using Agent.Criteria;
+﻿using System.Xml.Linq;
+using Agent.Criteria;
+using Microsoft.FSharp.Collections;
 
 namespace Agent
 {
@@ -13,55 +15,70 @@ namespace Agent
     [Serializable]
     public class Alpha
     {
-        private readonly double learningRate;
+        private readonly double _learningRate;
 
-        private readonly double errorThreshold;
+        private readonly double _errorThreshold;
 
-        private readonly double windowedErrorThreshold;
+        private readonly double _windowedErrorThreshold;
 
-        private bool stopper;
+        private bool _stopper;
 
         public Alpha(double errorThreshold, double learningRate, double windowedErrorThreshold)
         {
-            this.errorThreshold = errorThreshold;
-            this.learningRate = learningRate;
-            this.windowedErrorThreshold = windowedErrorThreshold;
+            this._errorThreshold = errorThreshold;
+            this._learningRate = learningRate;
+            this._windowedErrorThreshold = windowedErrorThreshold;
         }
 
         public void Initialize()
         {
-            //Debugger.Launch();
             var raw = DataRepository.GetRawData();
-            var clusters = DataRepository.ProcessedData(raw, windowedErrorThreshold).ToList();
+            var clusters = DataRepository.ProcessedData(raw, _windowedErrorThreshold).ToList();
+
             var tsks = clusters.SelectMany(c => c.Series.Select(m => InitialTrain(m).ContinueWith(tsk => Predict(tsk.Result, m)))).ToArray();
             Task.WaitAll(tsks);
+
+            var tsks2 = SeqModule.ChunkBySize(10000, tsks.Select(tsk => tsk.Result)).Select(arr => Task.Run(() => InsertData(arr))).ToArray();
+            Task.WaitAll(tsks2);
         }
 
         public void Stop()
         {
-            stopper = true;
+            _stopper = true;
         }
 
-        private void Predict(TrainedModel model, LearningModel model1)
+        private Prediction Predict(TrainedModel model, LearningModel model1)
         {
             var last = model1.Data.Last();
-            var criteria = new InsertDataCriteria()
+            var prediction = new Prediction()
             {
                 CustId = model.CustId,
-                Prediction = model.PredictMargin(last.Skip(1).ToArray()),
-                TrainErr = Math.Abs(last[last.Length - 1] - model.PredictMargin(last))
+                Margin = model.PredictMargin(last.Skip(1).ToArray()),
+                TrainError = Math.Abs(last[last.Length - 1] - model.PredictMargin(last))
+            };
+
+            return prediction;
+        }
+
+        private Task<TrainedModel> InitialTrain(LearningModel model)
+        {
+            var initWeight = Algorithm.GenerateWeight(Network.Complexity(model.Nn));
+            return model.Train(initWeight, Float64.D.One * _learningRate, _errorThreshold, _stopper);
+        }
+
+        private void InsertData(Prediction[] arr)
+        {
+            var elems = arr.Select(p => p.ToXML()).ToArray();
+
+            var criteria = new InsertDataCriteria()
+            {
+                Predictions = new XElement("ROOT", elems).ToString()
             };
 
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
                 db.ExecuteNonQuery(criteria);
             }
-        }
-
-        private Task<TrainedModel> InitialTrain(LearningModel model)
-        {
-            var initWeight = Algorithm.GenerateWeight(Network.Complexity(model.Nn));
-            return model.Train(initWeight, Float64.D.One * learningRate, errorThreshold, stopper);
         }
     }
 }

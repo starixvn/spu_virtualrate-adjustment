@@ -15,11 +15,12 @@
         {
             CustId = s.CustId;
 
-            var stoppingThreshold = 20; //stopping threshold suggested in Time Series Prediction and Neural Networks paper
-            var tmp = Seq.FNN(s.Margins, stoppingThreshold, (x, y) => Math.Sqrt(x.Zip(y, (a, b) => Math.Pow(a - b, 2)).Sum())); // find good windows using false nearest neighbor
+            var stoppingThreshold = 20; ////stopping threshold suggested in Time Series Prediction and Neural Networks paper
+            ////find good windows using false nearest neighbor
+            var tmp = Seq.FNN(s.Margins, stoppingThreshold, (x, y) => Math.Sqrt(x.Zip(y, (a, b) => Math.Pow(a - b, 2)).Sum())); 
 
             Data =
-                (double)tmp.Item2 / (s.Margins.Length - tmp.Item1 + 1) <= threshold // (number of error data)/(total data) <= threshold
+                (double)tmp.Item2 / (s.Margins.Length - tmp.Item1 + 1) <= threshold //// (number of error data)/(total data) <= threshold
                 ? SeqModule.Windowed(tmp.Item1 + 1, s.Margins).ToArray()
                 : new double[][] { };
             AttributeLength = tmp.Item1;

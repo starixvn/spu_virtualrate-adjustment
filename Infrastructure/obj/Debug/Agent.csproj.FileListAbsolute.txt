@@ -46,7 +46,6 @@ D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Microsoft.Practices.E
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Microsoft.Practices.Unity.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Microsoft.Practices.Unity.Interception.dll
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Streams.CSharp.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Streams.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\ExtCore.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\FSharp.Quotations.Evaluator.dll
@@ -59,8 +58,6 @@ D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Gemynd.CSharp.pdb
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Gemynd.CSharp.xml
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Streams.pdb
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Streams.xml
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Streams.CSharp.pdb
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\Streams.CSharp.xml
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\ExtCore.xml
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\FSharp.Quotations.Evaluator.pdb
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Debug\FSharp.Quotations.Evaluator.xml

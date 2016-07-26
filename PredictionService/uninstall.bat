@@ -1,2 +1,2 @@
-%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe  SPU.CustMarginPrediction.Service.exe /u  SPU.CustMarginPrediction.Service.exe
+%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe  %~d0\%~p0\SPU.CustMarginPrediction.Service.exe /u  %~d0\%~p0\SPU.CustMarginPrediction.Service.exe
 pause

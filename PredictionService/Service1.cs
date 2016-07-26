@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Agent;
 using Fanex.Data.Configuration;
 
-
 namespace SPU.CustMarginPrediction.Service
 {
     public partial class Service1 : ServiceBase
