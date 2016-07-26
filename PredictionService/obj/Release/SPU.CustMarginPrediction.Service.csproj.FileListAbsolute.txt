@@ -1,7 +1,5 @@
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\DiffSharp.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\ExtCore.dll
-D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Fanex.Data.dll
-D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Fanex.Logging.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\FSharp.Core.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\FSharp.Quotations.Evaluator.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Gemynd.CSharp.dll
@@ -13,8 +11,6 @@ D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Microsoft.Practi
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Microsoft.Practices.ServiceLocation.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Microsoft.Practices.Unity.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Microsoft.Practices.Unity.Interception.dll
-D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Streams.CSharp.dll
-D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Streams.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Agent.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\libgcc_s_seh-1.dll
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\libgfortran-3.dll
@@ -49,3 +45,4 @@ D:\Project\virtualrate-adjustment\PredictionService\bin\Release\Streams.CSharp.x
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\App.LOCAL.config
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\App.PRO.config
 D:\Project\virtualrate-adjustment\PredictionService\bin\Release\App.UAT.config
+D:\Project\virtualrate-adjustment\PredictionService\bin\Release\DiffSharp.pdb

@@ -68,3 +68,4 @@ D:\Project\virtualrate-adjustment\AlphaCmd\bin\Release\MathNet.Numerics.xml
 D:\Project\virtualrate-adjustment\AlphaCmd\obj\Release\AlphaCmd.csprojResolveAssemblyReference.cache
 D:\Project\virtualrate-adjustment\AlphaCmd\obj\Release\AlphaCmd.exe
 D:\Project\virtualrate-adjustment\AlphaCmd\obj\Release\AlphaCmd.pdb
+D:\Project\virtualrate-adjustment\AlphaCmd\bin\Release\DiffSharp.pdb

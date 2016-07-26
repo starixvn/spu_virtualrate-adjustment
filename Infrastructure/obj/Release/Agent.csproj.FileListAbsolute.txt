@@ -39,19 +39,13 @@ D:\Project\virtualrate-adjustment\Infrastructure\obj\Release\Agent.pdb
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Agent.dll.config
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Agent.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Agent.pdb
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\DiffSharp.dll
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\ExtCore.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Fanex.Data.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\FSharp.Core.dll
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Gemynd.CSharp.dll
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Gemynd.dll
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\MathNet.Numerics.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Microsoft.Practices.ServiceLocation.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Microsoft.Practices.Unity.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Microsoft.Practices.Unity.Interception.dll
-D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Streams.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\FSharp.Quotations.Evaluator.dll
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\DiffSharp.xml
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\ExtCore.xml
@@ -65,3 +59,4 @@ D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Streams.pdb
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\Streams.xml
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\FSharp.Quotations.Evaluator.pdb
 D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\FSharp.Quotations.Evaluator.xml
+D:\Project\virtualrate-adjustment\Infrastructure\bin\Release\DiffSharp.pdb

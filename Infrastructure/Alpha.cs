@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Diagnostics;
+using System.Xml.Linq;
 using Agent.Criteria;
 using Microsoft.FSharp.Collections;
 
@@ -37,7 +38,7 @@ namespace Agent
 
             var tsks = clusters.SelectMany(c => c.Series.Select(m => InitialTrain(m).ContinueWith(tsk => Predict(tsk.Result, m)))).ToArray();
             Task.WaitAll(tsks);
-
+            
             var tsks2 = SeqModule.ChunkBySize(10000, tsks.Select(tsk => tsk.Result)).Select(arr => Task.Run(() => InsertData(arr))).ToArray();
             Task.WaitAll(tsks2);
         }

@@ -562,14 +562,14 @@
  Propagates the adjoint `v` backwards through the evaluation trace of `d`. The adjoints in the trace are reset before the push.
 </summary>
 </member>
-<member name="M:DiffSharp.AD.Float32.DOps.reverseReset(System.Object)">
-<summary>
- Resets the adjoints of all the values in the evaluation trace of `d`, preparing for a new reverse propagation
-</summary>
-</member>
 <member name="M:DiffSharp.AD.Float32.DOps.reversePush(System.Object,System.Object)">
 <summary>
  Pushes the adjoint `v` backward through the evaluation trace of `d`
+</summary>
+</member>
+<member name="M:DiffSharp.AD.Float32.DOps.reverseReset(System.Object)">
+<summary>
+ Resets the adjoints of all the values in the evaluation trace of `d`, preparing for a new reverse propagation
 </summary>
 </member>
 <member name="M:DiffSharp.AD.Float32.DOps.primalTangent``1(``0)">
@@ -1732,14 +1732,14 @@
  Propagates the adjoint `v` backwards through the evaluation trace of `d`. The adjoints in the trace are reset before the push.
 </summary>
 </member>
-<member name="M:DiffSharp.AD.Float64.DOps.reverseReset(System.Object)">
-<summary>
- Resets the adjoints of all the values in the evaluation trace of `d`, preparing for a new reverse propagation
-</summary>
-</member>
 <member name="M:DiffSharp.AD.Float64.DOps.reversePush(System.Object,System.Object)">
 <summary>
  Pushes the adjoint `v` backward through the evaluation trace of `d`
+</summary>
+</member>
+<member name="M:DiffSharp.AD.Float64.DOps.reverseReset(System.Object)">
+<summary>
+ Resets the adjoints of all the values in the evaluation trace of `d`, preparing for a new reverse propagation
 </summary>
 </member>
 <member name="M:DiffSharp.AD.Float64.DOps.primalTangent``1(``0)">
