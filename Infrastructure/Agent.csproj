@@ -33,7 +33,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DiffSharp, Version=0.7.7.0, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="DiffSharp, Version=0.7.8.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependency\DiffSharp.dll</HintPath>
     </Reference>
@@ -47,7 +47,11 @@
     </Reference>
     <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ga-testing\Dependency\DiffSharp\FSharp.Core.dll</HintPath>
+      <HintPath>..\Dependency\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Quotations.Evaluator, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependency\FSharp.Quotations.Evaluator.dll</HintPath>
     </Reference>
     <Reference Include="Gemynd, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -56,10 +60,6 @@
     <Reference Include="Gemynd.CSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependency\Gemynd.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="MathNet.Numerics, Version=3.12.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependency\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\EnterpriseLibrary.Common.5.0.414.0\lib\net40\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
