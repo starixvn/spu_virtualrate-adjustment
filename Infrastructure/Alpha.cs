@@ -24,6 +24,8 @@ namespace Agent
 
         private bool _stopper;
 
+        private string name = nameof(Alpha);
+
         public Alpha(double errorThreshold, double learningRate, double windowedErrorThreshold)
         {
             this._errorThreshold = errorThreshold;
@@ -33,14 +35,28 @@ namespace Agent
 
         public void Initialize()
         {
-            var raw = DataRepository.GetRawData();
-            var clusters = DataRepository.ProcessedData(raw, _windowedErrorThreshold).ToList();
+            try
+            {
+                EventLog.WriteEntry(name, "start");
+                var raw = DataRepository.GetRawData(name);
 
-            var tsks = clusters.SelectMany(c => c.Series.Select(m => InitialTrain(m).ContinueWith(tsk => Predict(tsk.Result, m)))).ToArray();
-            Task.WaitAll(tsks);
-            
-            var tsks2 = SeqModule.ChunkBySize(10000, tsks.Select(tsk => tsk.Result)).Select(arr => Task.Run(() => InsertData(arr))).ToArray();
-            Task.WaitAll(tsks2);
+                EventLog.WriteEntry(name, "clustering");
+                var clusters = DataRepository.ProcessedData(raw, _windowedErrorThreshold).ToList();
+
+                EventLog.WriteEntry(name, "finish clustering,start training");
+                var tsks = clusters.SelectMany(c => c.Series.Select(m => InitialTrain(m).ContinueWith(tsk => Predict(tsk.Result, m)))).ToArray();
+                Task.WaitAll(tsks);
+
+                EventLog.WriteEntry(name, "finish training, predicting");
+                var tsks2 = SeqModule.ChunkBySize(10000, tsks.Select(tsk => tsk.Result)).Select(arr => Task.Run(() => InsertData(arr))).ToArray();
+                Task.WaitAll(tsks2);
+
+                EventLog.WriteEntry(name, "finish uploading data");
+            }
+            catch (Exception ex)
+            {
+                EventLog.WriteEntry(name, $"Error {ex.Message}");
+            }
         }
 
         public void Stop()
@@ -75,6 +91,8 @@ namespace Agent
             {
                 Predictions = new XElement("ROOT", elems).ToString()
             };
+
+            EventLog.WriteEntry(name, "uploading data");
 
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {

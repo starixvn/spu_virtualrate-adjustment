@@ -17,10 +17,9 @@ namespace SPU.CustMarginPrediction.Service
         protected override void OnStart(string[] args)
         {
             DbSettingProviderManager.Current.Start();
-
+            agent = new Alpha(Resource.ErrorThreshold, Resource.LearningRate, Resource.WindowThreshold);
             Task.Run(() =>
-            {
-                agent = new Alpha(Resource.ErrorThreshold, Resource.LearningRate, Resource.WindowThreshold);
+            {               
                 agent.Initialize();
             });
         }

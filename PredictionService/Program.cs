@@ -1,4 +1,5 @@
 ﻿using System.ServiceProcess;
+using Fanex.Logging;
 
 namespace SPU.CustMarginPrediction.Service
 {
@@ -10,7 +11,6 @@ namespace SPU.CustMarginPrediction.Service
         private static void Main()
         {
             ServiceBase[] ServicesToRun;
-
             ServicesToRun = new ServiceBase[]
             {
                 new Service1()

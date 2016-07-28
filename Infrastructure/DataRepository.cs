@@ -1,4 +1,6 @@
-﻿namespace Agent
+﻿using System.Diagnostics;
+
+namespace Agent
 {
     using System;
     using System.Collections.Generic;
@@ -9,20 +11,20 @@
 
     public static class DataRepository
     {
-        public static IEnumerable<BetModel> GetRawData()
+        public static IEnumerable<BetModel> GetRawData(string name)
         {
             var today = DateTime.Today;
             var q = new Queue<IEnumerable<BetModel>>();
             var rep = new DynamicRepository();
 
-            for (var accDate = new DateTime(today.Year - 2, 1, 1); accDate.Month != today.Month && accDate.Year != today.Year; accDate = accDate.AddMonths(1))
+            for (var accDate = new DateTime(today.Year - 2, 1, 1); accDate.Month != today.Month || accDate.Year != today.Year; accDate = accDate.AddMonths(1))
             {
                 var criteria = new GetDataCriteria()
                 {
                     Month = accDate.Month,
                     Year = accDate.Year
                 };
-
+                EventLog.WriteEntry(name, $"finish getting data {accDate.Month} - {accDate.Year}");
                 q.Enqueue(rep.Fetch<BetModel>(criteria));
             }
 

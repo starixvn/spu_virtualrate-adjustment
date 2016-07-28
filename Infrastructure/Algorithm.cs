@@ -1,4 +1,6 @@
-﻿namespace Agent
+﻿using System.Diagnostics;
+
+namespace Agent
 {
     using System;
     using System.Linq;
@@ -45,7 +47,11 @@
                     Gemynd.CSharp.Learning.Neural.Training.LevenbergMarquadt(model.Data, parameters, trainer),
                     FSharpOption<TaskCreationOptions>.None,
                     FSharpOption<CancellationToken>.None)
-                .ContinueWith(tsk => new TrainedModel(model.CustId, tsk.Result, func));
+                .ContinueWith(tsk =>
+                {
+                    EventLog.WriteEntry(nameof(Alpha), $"finish training {model.CustId}");
+                    return new TrainedModel(model.CustId, tsk.Result, func);
+                });
         }
 
         public static Float64.DV GenerateWeight(int length)

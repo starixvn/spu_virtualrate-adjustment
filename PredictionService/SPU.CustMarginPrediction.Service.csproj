@@ -38,6 +38,10 @@
       <HintPath>..\packages\Fanex.Data.0.5.404.63\lib\net40\Fanex.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Fanex.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Logging.1.0.0.0\lib\net40\Fanex.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Streams, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\AlphaNetwork\packages\Streams.0.4.1\lib\net45\Streams.dll</HintPath>
       <Private>True</Private>
@@ -72,9 +76,6 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="App.LOCAL.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="App.PRO.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
