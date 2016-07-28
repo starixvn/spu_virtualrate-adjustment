@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Functions>
   <Function>
-    <Setting Key="CMS_GetRawData" SpName ="CMS_GetRawData" DbName="DBDW.bodb_dwrs.bodbAdminNet"/>
-    <Setting Key="CMS_InsertPrediction" SpName ="CMS_InsertPrediction" DbName="DBFD.FraudDetection.bodbSPUNet"/>
+    <Setting Key="CMS_GetRawData" SpName ="CMS_GetRawData" DbName="DBFD.bodb_dwrs.bodbSPUNet" TimeOut="3600"/>
+    <Setting Key="CMS_InsertPrediction" SpName ="CMS_InsertPrediction" DbName="DBFD.FraudDetection.bodbSPUNet" TimeOut="3600"/>
   </Function>
 </Functions>

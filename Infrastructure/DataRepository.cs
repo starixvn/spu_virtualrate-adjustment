@@ -24,8 +24,10 @@ namespace Agent
                     Month = accDate.Month,
                     Year = accDate.Year
                 };
-                EventLog.WriteEntry(name, $"finish getting data {accDate.Month} - {accDate.Year}");
-                q.Enqueue(rep.Fetch<BetModel>(criteria));
+                var data = rep.Fetch<BetModel>(criteria).ToList();
+
+                EventLog.WriteEntry(name, $"finish getting data {accDate.Month} - {accDate.Year}\nCount: {data.Count}");
+                q.Enqueue(data);
             }
 
             return q.SelectMany(x => x).ToList();

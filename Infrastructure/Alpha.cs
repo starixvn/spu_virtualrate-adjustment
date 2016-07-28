@@ -48,7 +48,7 @@ namespace Agent
                 Task.WaitAll(tsks);
 
                 EventLog.WriteEntry(name, "finish training, predicting");
-                var tsks2 = SeqModule.ChunkBySize(10000, tsks.Select(tsk => tsk.Result)).Select(arr => Task.Run(() => InsertData(arr))).ToArray();
+                var tsks2 = SeqModule.ChunkBySize(1000, tsks.Select(tsk => tsk.Result)).Select(arr => Task.Run(() => InsertData(arr))).ToArray();
                 Task.WaitAll(tsks2);
 
                 EventLog.WriteEntry(name, "finish uploading data");
