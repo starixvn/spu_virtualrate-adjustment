@@ -2,36 +2,28 @@
 <doc>
 <assembly><name>Gemynd</name></assembly>
 <members>
-<member name="M:Gemynd.Learning.Neural.Training.LM``1(Gemynd.Learning.Neural.Parameter{DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},System.Tuple{DiffSharp.AD.Float64.DV,DiffSharp.AD.Float64.D}},System.Collections.Generic.IEnumerable{``0})">
+<member name="M:Gemynd.Learning.Neural.Training.LM``1(Gemynd.Learning.Neural.Parameter{DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Training.LMState},System.Collections.Generic.IEnumerable{``0})">
  <summary>
- Levenberg Mardquet learning algorithm
+ Levenberg Marquardt learning algorithm
  </summary>
  <param name="params">learning rate</param>
- <param name="trainer">data, latest weight * learing rate, latest cost * previous cost * learning rate</param>
+ <param name="trainer">criteria: latest cost * previous cost * learning rate</param>
  <param name="data">data to be trained</param>
 </member>
-<member name="M:Gemynd.Learning.Neural.Training.steepestDescent``1(Gemynd.Learning.Neural.Parameter{DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},System.Tuple{DiffSharp.AD.Float64.DV,DiffSharp.AD.Float64.D}},System.Collections.Generic.IEnumerable{``0})">
+<member name="M:Gemynd.Learning.Neural.Training.steepestDescent``1(Gemynd.Learning.Neural.Parameter{DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Training.DescentState},System.Collections.Generic.IEnumerable{``0})">
  <summary>
  steepest descent learning
  </summary>
  <param name="params">learning rate</param>
- <param name="trainer">data, latest weight * learing rate, latest cost * previous cost * learning rate</param>
+ <param name="trainer">criteria: current cost * previous cost * learning rate</param>
  <param name="data">data to be trained</param>
 </member>
-<member name="M:Gemynd.Learning.Neural.Training.deltaBDelta``1(Gemynd.Learning.Neural.Parameter{System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D,Microsoft.FSharp.Core.FSharpFunc{System.Boolean,Microsoft.FSharp.Core.FSharpFunc{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D}}}},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},System.Tuple{DiffSharp.AD.Float64.DV,DiffSharp.AD.Float64.D}},System.Collections.Generic.IEnumerable{``0})">
- <summary>
-  delta bar delta learning with the option of momentum
- </summary>
- <param name="params">learning rate * momentum * delta rate * learning modifier</param>
- <param name="trainer">data, latest weight * latest rate, latest cost * previous cost</param>
- <param name="data">data to be trained</param>
-</member>
-<member name="M:Gemynd.Learning.Neural.Training.backProp``1(Gemynd.Learning.Neural.Parameter{System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D}},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},DiffSharp.AD.Float64.DV},System.Collections.Generic.IEnumerable{``0})">
+<member name="M:Gemynd.Learning.Neural.Training.backProp``1(Gemynd.Learning.Neural.Parameter{System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D}},Gemynd.Learning.Neural.Trainer{``0,System.Tuple{DiffSharp.AD.Float64.D,DiffSharp.AD.Float64.D},Gemynd.Learning.Neural.Training.BackPropState},System.Collections.Generic.IEnumerable{``0})">
  <summary>
   backpropagation training with the option of momentum
  </summary>
  <param name="params">learning rate * momentum</param>
- <param name="trainer">data, latest weight, latest cost * previous cost</param>
+ <param name="trainer"> criteria: latest cost * previous cost</param>
  <param name="data">data to be trained</param>
 </member>
 </members>

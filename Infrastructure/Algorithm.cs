@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Gemynd.Learning.Neural;
 
 namespace Agent
 {
@@ -39,7 +40,7 @@ namespace Agent
             var trainer = Gemynd.CSharp.Learning.Neural.Training.Trainer(
                 cost,
                 (err1, err, v) => (double)err1 < errorThreshold || stopper,
-                FSharpOption<Action<Float64.DV, Float64.D>>.None);
+                FSharpOption<Action<Training.LMState>>.None);
 
             return
                 FSharpAsync
@@ -50,7 +51,7 @@ namespace Agent
                 .ContinueWith(tsk =>
                 {
                     EventLog.WriteEntry(nameof(Alpha), $"finish training {model.CustId}");
-                    return new TrainedModel(model.CustId, tsk.Result, func);
+                    return new TrainedModel(model.CustId, tsk.Result.Bws, func);
                 });
         }
 
